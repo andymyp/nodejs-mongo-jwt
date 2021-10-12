@@ -137,6 +137,7 @@
             "name": "body",
             "description": "Created course",
             "required": true,
+            "type": "string",
             "schema": {
               "$ref": "#/definitions/Course"
             }
@@ -204,8 +205,9 @@
           {
             "in": "formData",
             "name": "body",
-            "description": "Created user Record",
+            "description": "Update course",
             "required": true,
+            "type": "string",
             "schema": {
               "$ref": "#/definitions/Course"
             }
