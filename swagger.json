@@ -127,19 +127,33 @@
         "parameters": [
           {
             "in": "formData",
+            "name": "judul",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "kategori",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "deskripsi",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
             "name": "image",
-            "description": "Image course",
             "required": true,
             "type": "file"
           },
           {
-            "in": "body",
-            "name": "body",
-            "description": "Created course",
+            "in": "formData",
+            "name": "harga",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/Course"
-            }
+            "type": "integer"
           }
         ],
         "responses": {
@@ -196,19 +210,33 @@
           },
           {
             "in": "formData",
+            "name": "judul",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "kategori",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "deskripsi",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
             "name": "image",
-            "description": "Image course",
             "required": true,
             "type": "file"
           },
           {
-            "in": "body",
-            "name": "body",
-            "description": "Update course",
+            "in": "formData",
+            "name": "harga",
             "required": true,
-            "schema": {
-              "$ref": "#/definitions/Course"
-            }
+            "type": "integer"
           }
         ],
         "responses": {
@@ -401,6 +429,9 @@
         },
         "deskripsi": {
           "type": "string"
+        },
+        "image": {
+          "type": "object"
         },
         "harga": {
           "type": "integer"
