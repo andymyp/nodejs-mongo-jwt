@@ -138,6 +138,7 @@
             "description": "Created course",
             "required": true,
             "type": "string",
+            "format": "json",
             "schema": {
               "$ref": "#/definitions/Course"
             }
@@ -208,6 +209,7 @@
             "description": "Update course",
             "required": true,
             "type": "string",
+            "format": "json",
             "schema": {
               "$ref": "#/definitions/Course"
             }
