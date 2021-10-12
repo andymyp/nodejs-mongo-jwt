@@ -11,7 +11,7 @@ This project uses:
 - SwaggerUI
 - And more
 
-## Local Installation
+## Installation
 
 ```bash
 git clone https://github.com/andymyp/nodejs-mongo-jwt.git
@@ -25,24 +25,7 @@ cd nodejs-mongo-jwt
 npm install
 ```
 
-## Online Installation
-
-- Clone this repository to your repository with:
-
-```bash
-git remote set-url origin <url-of-your-repository>
-```
-
-```bash
-git push -u origin main
-```
-
-- [Login](https://id.heroku.com/login) or [Register](https://signup.heroku.com/) on Heroku
-- On [dashboard](https://dashboard.heroku.com/apps) click `Create new app` and create app
-- In Deployment method choose GitHub and connect to your github repository
-- Enable automatic deploy and click deploy branch
-
-## Setup config file `.env`
+### Setup config file `.env`
 
 ```text
 # Express config
@@ -58,7 +41,7 @@ CLOUDINARY_API_SECRET=9wD6Ck4ryUBJ-SSfYOoWOElm_TE
 
 Change to your Express and Cloudinary config.
 
-## Setup database `startup > db.js`
+### Setup database `startup > db.js`
 
 ```javascript
 const CONNECTION_URL =
@@ -72,3 +55,25 @@ Change to your MongoDB connection url.
 ```bash
 npm start
 ```
+
+## Online Usage
+
+- Clone this repository to your repository with:
+
+```bash
+git remote set-url origin <url-of-your-repository>
+```
+
+```bash
+git push -u origin main
+```
+
+- [Login](https://id.heroku.com/login) or [Register](https://signup.heroku.com/) on Heroku
+- On [dashboard](https://dashboard.heroku.com/apps) click `Create new app` and create app
+- In `Deployment method` choose `GitHub` and connect to your github repository
+- `Enable automatic deploy` and click `Deploy Branch`
+
+## Documentation
+
+- [View Documentation](https://course-backend-node.herokuapp.com)
+- Base url API [https://course-backend-node.herokuapp.com/api](https://course-backend-node.herokuapp.com/api)

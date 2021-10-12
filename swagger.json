@@ -8,7 +8,7 @@
       "email": "andymyp1997@gmail.com"
     }
   },
-  "host": "http://localhost:8080",
+  "host": "https://course-backend-node.herokuapp.com",
   "basePath": "/api",
   "securityDefinitions": {
     "JWT": {
