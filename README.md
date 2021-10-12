@@ -56,7 +56,7 @@ Change to your MongoDB connection url.
 npm start
 ```
 
-## Online Usage
+## Online Usage with Heroku
 
 - Clone this repository to your repository with:
 
