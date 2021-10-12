@@ -133,7 +133,7 @@
             "type": "file"
           },
           {
-            "in": "body",
+            "in": "formData",
             "name": "body",
             "description": "Created course",
             "required": true,
@@ -202,7 +202,7 @@
             "type": "file"
           },
           {
-            "in": "body",
+            "in": "formData",
             "name": "body",
             "description": "Created user Record",
             "required": true,
