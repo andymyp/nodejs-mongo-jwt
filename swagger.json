@@ -1,0 +1,430 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Node Js Express Course API",
+    "version": "1.0.0",
+    "description": "Node Js Course backend API with Express, MongoDB, and JWT Authentication.",
+    "contact": {
+      "email": "andymyp1997@gmail.com"
+    }
+  },
+  "host": "http://localhost:8080",
+  "basePath": "/api",
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "name": "x-auth-token",
+      "in": "header"
+    }
+  },
+  "schemes": ["https", "http"],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create login",
+        "operationId": "createLogin",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created user object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Login"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create user",
+        "operationId": "createUser",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created user",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "delete": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["User"],
+        "summary": "Soft delete user (Require login and admin role)",
+        "operationId": "deleteCourseById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/courses": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Get list of course (Require login)",
+        "operationId": "getCourses",
+        "produces": ["application/json"],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/course": {
+      "post": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Create course (Require login and admin role)",
+        "operationId": "createrCourse",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "formData",
+            "name": "image",
+            "description": "Image course",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created course",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/course/{id}": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Get detail course (Require login)",
+        "operationId": "getCourseById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "put": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Update course (Require login and admin role)",
+        "operationId": "updateCourse",
+        "produces": ["application/json"],
+        "consumes": ["multipart/form-data"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of body",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "formData",
+            "name": "image",
+            "description": "Image course",
+            "required": true,
+            "type": "file"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Created user Record",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Course"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      },
+      "delete": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Delete course (Require login and admin role)",
+        "operationId": "deleteCourseById",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "description": "ID of body",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/category-course": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Get category course (Require login)",
+        "operationId": "getCategoryCourse",
+        "produces": ["application/json"],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/popular-category-course": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Get popular category course (Require login)",
+        "operationId": "getPopularCategoryCourse",
+        "produces": ["application/json"],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/search-course": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Search course by judul (Require login)",
+        "operationId": "searchCourse",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Search course",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Search"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/sort-course": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Course"],
+        "summary": "Sort course by harga (Require login)",
+        "operationId": "sortCourse",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Sort course",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Sort"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/simple-statistics": {
+      "get": {
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "tags": ["Statistics"],
+        "summary": "Get statistics (Require login and admin role)",
+        "operationId": "getCategoryCourse",
+        "produces": ["application/json"],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Login": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": ["email", "password"]
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "nama": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "password": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["user", "admin"]
+        }
+      },
+      "required": ["nama", "email", "password", "role"]
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "judul": {
+          "type": "string"
+        },
+        "kategori": {
+          "type": "string"
+        },
+        "deskripsi": {
+          "type": "string"
+        },
+        "harga": {
+          "type": "integer"
+        }
+      },
+      "required": ["judul", "kategori", "deskripsi", "harga"]
+    },
+    "Search": {
+      "type": "object",
+      "properties": {
+        "judul": {
+          "type": "string"
+        }
+      },
+      "required": ["judul"]
+    },
+    "Sort": {
+      "type": "object",
+      "properties": {
+        "harga": {
+          "type": "string",
+          "enum": ["lowest", "highest", "free"]
+        }
+      },
+      "required": ["harga"]
+    }
+  }
+}
