@@ -25,7 +25,7 @@ cd nodejs-mongo-jwt
 npm install
 ```
 
-### Setup config file `.env`
+#### Setup config file `.env`
 
 ```text
 # Express config
@@ -41,14 +41,15 @@ CLOUDINARY_API_SECRET=9wD6Ck4ryUBJ-SSfYOoWOElm_TE
 
 Change to your Express and Cloudinary config.
 
-### Setup database `startup > db.js`
+#### Setup database `startup > db.js`
+
+- [Create MongoDB](https://www.mongodb.com/cloud/atlas)
+- Change this to your MongoDB connection url.
 
 ```javascript
 const CONNECTION_URL =
   "mongodb+srv://andymyp:15041997myp@crud.xcu9g.mongodb.net/course?retryWrites=true&w=majority";
 ```
-
-Change to your MongoDB connection url.
 
 ## Local Usage
 
