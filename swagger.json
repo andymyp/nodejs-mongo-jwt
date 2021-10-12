@@ -123,6 +123,7 @@
         "summary": "Create course (Require login and admin role)",
         "operationId": "createrCourse",
         "produces": ["application/json"],
+        "consumes": ["multipart/form-data"],
         "parameters": [
           {
             "in": "formData",

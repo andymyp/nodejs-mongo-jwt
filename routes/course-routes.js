@@ -18,7 +18,11 @@ const {
 const router = express.Router();
 
 router.post("/course", [authToken, isAdmin, mt.single("image")], createCourse);
-router.put("/course/:id", [authToken, isAdmin], updateCourse);
+router.put(
+  "/course/:id",
+  [authToken, isAdmin, mt.single("image")],
+  updateCourse
+);
 router.delete("/course/:id", [authToken, isAdmin], deleteCourse);
 
 router.get("/courses", authToken, getCourses);
