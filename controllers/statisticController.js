@@ -2,7 +2,7 @@ const { User } = require("../models/user");
 const { Course } = require("../models/course");
 
 const getSimpleStatistics = async (req, res, next) => {
-  const totalUser = await User.find().count();
+  const totalUser = await User.find({ isDeleted: false }).count();
   const totalCourse = await Course.find().count();
   const totalFreeCourse = await Course.find({ harga: 0 }).count();
 
