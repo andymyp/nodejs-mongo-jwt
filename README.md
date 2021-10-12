@@ -25,6 +25,23 @@ cd nodejs-mongo-jwt
 npm install
 ```
 
+## Online Installation
+
+- Clone this repository to your repository with:
+
+```bash
+git remote set-url origin <url-of-your-repository>
+```
+
+```bash
+git push -u origin main
+```
+
+- [Login](https://id.heroku.com/login) or [Register](https://signup.heroku.com/) on Heroku
+- On [dashboard](https://dashboard.heroku.com/apps) click `Create new app` and create app
+- In Deployment method choose GitHub and connect to your github repository
+- Enable automatic deploy and click deploy branch
+
 ## Setup config file `.env`
 
 ```text
