@@ -29,7 +29,6 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Created user object",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Login"
@@ -53,7 +52,6 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Created user",
             "required": true,
             "schema": {
               "$ref": "#/definitions/User"
@@ -82,7 +80,6 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of body",
             "required": true,
             "type": "string"
           }
@@ -178,7 +175,6 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of body",
             "required": true,
             "type": "string"
           }
@@ -204,7 +200,6 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of body",
             "required": true,
             "type": "string"
           },
@@ -259,7 +254,6 @@
           {
             "in": "path",
             "name": "id",
-            "description": "ID of body",
             "required": true,
             "type": "string"
           }
@@ -322,7 +316,6 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Search course",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Search"
@@ -351,7 +344,6 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Sort course",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Sort"
